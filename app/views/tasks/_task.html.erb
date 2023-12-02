@@ -1,0 +1,16 @@
+<div id="<%= dom_id task %>" class="mb-2">
+  <div class="card pt-5">
+    <div class="card-body">
+      <h5 class="card-title"><%= task.title %></h5>
+      <p class="card-text">
+        <%= task.body %>
+      </p>
+      <p>
+        <%= simple_form_for(task) do |f| %>
+          <%= f.input :completed, as: :boolean, label: 'Completed?', label_html: {for: ''} %>
+          <%= f.submit "Update", class: "btn btn-primary" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
